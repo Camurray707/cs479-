@@ -1,0 +1,16 @@
+# Project 2: Scene Recognition with Bag of Words
+
+## Credits
+This project is directly motivated from [Project 5 at Georgia Tech](https://dellaert.github.io/19F-4476/proj5.html)
+
+## Setup
+We will be installing a **NEW** environment for this project; follow the instructions below to set up the env. If you run into import module errors, try “pip install -e .” again, and if that still doesn’t work, you may have to create a fresh environment.
+
+1. Install [Miniconda](https://conda.io/miniconda.html). 
+2. Create a conda environment using the appropriate command. On Windows, open the installed "Conda prompt" to run the command. On MacOS and Linux, you can just use a terminal window to run the command, Modify the command based on your OS (`linux`, `mac`, or `win`): `conda env create -f proj2_env_<OS>.yml`
+3. This should create an environment named 'proj2'. Activate it using the Windows command, `activate proj2` or the MacOS / Linux command, `conda activate proj2`
+4. Install the project package, by running `pip install -e .` inside the repo folder.
+5. Your working directory is the `proj2_v2`. Run the notebook using `jupyter notebook ./proj2_code/proj2.ipynb`.
+6. Complete all TODO code in file `student_code.py`.
+7. Before submission, ensure that all sanity checks are passing by running `pytest` either inside the "proj2_unit_tests/" folder, or directly in the project directory.
+8. Generate the zip folder once you've finished the project using `python zip_submission.py --username <your_lastname_partner_lastname>` and submit to Canvas. The zip folder will contain the code portion of your submission and the template pptx file.

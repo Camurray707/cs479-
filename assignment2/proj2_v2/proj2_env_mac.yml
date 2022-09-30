@@ -1,0 +1,22 @@
+name: proj2
+channels:
+- pytorch
+- menpo
+- conda-forge
+- defaults
+- sepandhaghighi
+dependencies:
+- jupyter
+- matplotlib
+- python=3.9
+- scikit-image
+- scikit-learn
+- scipy
+- opencv
+- pytorch
+- torchvision
+- pycm
+- pip
+- pip:
+  - visdom
+- pyyaml

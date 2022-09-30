@@ -1,0 +1,8 @@
+required_directories:
+  - proj2_code
+required_files: 
+  - proj2_template.pptx
+optional_directories:
+  - additional_data
+optional_files:
+  - README.txt
