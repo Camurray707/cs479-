@@ -1,0 +1,9 @@
+README.md
+setup.py
+CS479_Fall2022_Proj2.egg-info/PKG-INFO
+CS479_Fall2022_Proj2.egg-info/SOURCES.txt
+CS479_Fall2022_Proj2.egg-info/dependency_links.txt
+CS479_Fall2022_Proj2.egg-info/requires.txt
+CS479_Fall2022_Proj2.egg-info/top_level.txt
+proj2_unit_tests/__init__.py
+proj2_unit_tests/test_student_code.py
