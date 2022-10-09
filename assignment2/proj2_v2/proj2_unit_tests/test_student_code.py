@@ -115,15 +115,23 @@ def test_nearest_neighbor_classify_k():
     training_data[2, :] = [0.5, 1]
     training_data[3, :] = [1, 1]
     training_data[4, :] = [2, 2]
+    print('training:', training_data)
+    
 
     testing_data = np.ones((1,2))
     testing_data *= 0.9
 
+
     training_labels = [0, 0, 0, 1, 1]
+
+    print('training labels:', training_labels)
+    print('test:',testing_data)
+
 
     labels = student_code.nearest_neighbor_classify(training_data, training_labels, testing_data, k=3)
 
     gt_labels = np.zeros((1, 2))
+    print('gt_labels:', gt_labels)
 
     # print(labels)
 
