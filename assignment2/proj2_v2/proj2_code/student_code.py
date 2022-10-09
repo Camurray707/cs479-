@@ -1,4 +1,5 @@
 from cProfile import label
+from random import random
 import numpy as np
 import skimage
 import torch
@@ -36,9 +37,9 @@ def pairwise_distances(X, Y):
 		-   D: N x M numpy array where d(i, j) is the distance between row i of X and
 				row j of Y
 		"""
-		N, d_y = X.shape
-		M, d_x = Y.shape
-		assert d_y == d_x
+		# N, d_y = X.shape
+		# M, d_x = Y.shape
+		# assert d_y == d_x
 
 		# D is the placeholder for the result
 		D = []
@@ -149,39 +150,23 @@ def nearest_neighbor_classify(train_image_feats, train_labels,
 
 	# train_image_feats is an array of images that we use to compare to our test_image_feats
 	# test_image_feats is an array of images that we are comparing with train_image_feats and classifying them
-	# train_labels are the classifications of train_image_feaths so their N should be the same
+	# train_labels are the classifications of train_image_feats so their N should be the same
 	# test_labels is where the conclusion of the classifications end up for each test_image_feats
 	
-	#print(train_image_feats)
-	#print(test_image_feats)
-
 	test_distance = pairwise_distances(test_image_feats, train_image_feats)
 
 	for test_img in test_distance:
+		classify_labels = []
+		temp_label = []
 		indexed_img = np.argsort(test_img)
 		sorted_test_img = test_img[indexed_img]
 
 		for i in range(k):
 			index = np.where(sorted_test_img[i]== test_img)[0][0]
-			print(index)
+			classify_labels.append(index)
+		temp_label = (stats.mode(classify_labels)[0][0])
+		test_labels.append(train_labels[temp_label])
 
-
-	#print('train_image:', train_image_feats)
-	#print('train_labels:', train_labels)
-	#print('test_distance:', test_distance)
-	#print(testing)	
-
-	#print(train_image_feats[testing[0]][0:k])
-
-	#print(train_labels)
-
-	#print('test_images:', train_image_feats)
-	#print(test_distance[0])
-
-	#classification = stats.mode(train_labels[testing[np.argsort(testing)[0:k]]])
-	#print('classification:', classification)
-
-	
 	#############################################################################
 	#                             END OF YOUR CODE                              #
 	#############################################################################
@@ -230,7 +215,20 @@ def kmeans(feature_vectors, k, max_iter = 100):
 	# TODO: YOUR CODE HERE                                                      #
 	#############################################################################
 
-	raise NotImplementedError('kmeans function not implemented.')
+	random_cluster = np.random.randint(k, size=(2, 1))
+	print('random_cluster:', random_cluster)
+	print('feature_vectors:', feature_vectors)
+	# print(random_cluster)
+
+	for image in random_cluster:
+		distance = pairwise_distances(image, feature_vectors)
+		print('distance:', distance)
+		closest_image_index = np.argmin(distance[0])
+		print('closest_image:', closest_image_index)
+
+
+
+	
 
 	#############################################################################
 	#                             END OF YOUR CODE                              #
