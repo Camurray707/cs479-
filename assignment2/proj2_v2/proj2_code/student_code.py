@@ -210,6 +210,7 @@ def kmeans(feature_vectors, k, max_iter = 100):
 
 	# dummy centroids placeholder
 	centroids = None
+	
 
 	#############################################################################
 	# TODO: YOUR CODE HERE                                                      #
