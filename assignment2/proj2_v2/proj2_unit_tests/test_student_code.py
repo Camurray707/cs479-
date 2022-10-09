@@ -103,8 +103,6 @@ def test_nearest_neighbor_classify():
 
     gt_labels = [0, 1, 2]
 
-    # print(labels)
-
     assert labels == gt_labels
 
 

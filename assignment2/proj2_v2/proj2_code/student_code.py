@@ -141,7 +141,7 @@ def nearest_neighbor_classify(train_image_feats, train_labels,
 	-   test_labels: M element list, where each entry is a string indicating the
 			predicted category for each testing image
 	"""
-	test_labels = [0,0]
+	test_labels = []
 
 	###########################################################################
 	# TODO: YOUR CODE HERE                                                    #
@@ -157,9 +157,13 @@ def nearest_neighbor_classify(train_image_feats, train_labels,
 
 	test_distance = pairwise_distances(test_image_feats, train_image_feats)
 
-	testing = np.argsort(test_distance)
+	for test_img in test_distance:
+		indexed_img = np.argsort(test_img)
+		sorted_test_img = test_img[indexed_img]
 
-	print('test distance:', test_distance)
+		for i in range(k):
+			index = np.where(sorted_test_img[i]== test_img)[0][0]
+			print(index)
 
 
 	#print('train_image:', train_image_feats)
